@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>8abtVjRv</title>
+</head>
+<body>
+<script>
+
+    function Client (id, name, surname , email, phone, order) {
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.email = email;
+        this.phone = phone;
+        this.order = order;
+    }
+
+    const clients = [];
+    clients.push(new Client(1, 'vasia', 'goliaka', 'vasia.goliaka@gmail.com', '09765429261', [{productId:101, title:'iPhone', price: 40000}]));
+    clients.push(new Client(2, 'petro', 'verb', 'petro.verb@gmail.com', '09365429262', [{productId:103, title:'iPhone X', price: 42000}]));
+    clients.push(new Client(3, 'nadia', 'verb', 'nadia.verb@gmail.com', '09765429263', [{productId:104, title:'samsung S24', price: 25000}]));
+    clients.push(new Client(4, 'semen', 'goliaka', 'semen.goliaka@gmail.com', '09765429264', [{productId:102, title:'samsung S24FE', price: 23000}]));
+    clients.push(new Client(5, 'kolia', 'goliaka', 'kolia.goliaka@gmail.com', '09765429265', [
+        {productId: 106, title: 'samsung S25', price: 35000}, {productId: 107, title: 'samsung S25FE', price: 32000}
+    ]));
+    clients.push(new Client(6, 'vitaliy', 'goliaka', 'vitaliy.goliaka@gmail.com', '09765429266', [{productId: 108, title: 'xiaomi XXX', price: 20000}]));
+    clients.push(new Client(7, 'nastia', 'surname', 'nastia.surname@gmail.com', '09765429267', [
+        {productId: 108, title: 'xiaomi XXX', price: 20000}, {productId: 110, title: 'honor', price: 15000}
+    ]));
+    clients.push(new Client(8, 'olga', 'surname', 'olga.surname@gmail.com', '09765429268', [{productId: 110, title: 'honor', price: 15000}]));
+    clients.push(new Client(9, 'vasia', 'surname', 'vasia.surname@gmail.com', '09765429269', [{productId: 111, title: 'xiaomi X', price: 19000}]));
+    clients.push(new Client(10, 'kolia', 'surname', 'kolia.surname@gmail.com', '09765429260', [{productId:111, title:'xiaomi X', price: 19000}]));
+
+    console.log(clients);
+
+    function Product (id, title, price) {
+        this.productId = id;
+        this.title = title;
+        this.price = price;
+    }
+
+    clients.push(new Client(11, 'kolia', 'surname', 'kolia.surname@gmail.com', '09765429260', [
+        new Product(111, 'xiaomi X', 19000),
+        new Product(104, 'samsung S24', 25000),
+        new Product(101, 'iPhone', 40000),
+    ]));
+
+    console.log(clients);
+
+    const sortedClients = clients.sort((a, b) => a.order.length - b.order.length);
+
+    console.log(sortedClients);
+
+</script>
+</body>
+</html>
+
+<!--#8abtVjRv-->
+<!--– Взяти масив (Client [] з попереднього завдання). Відсортувати його за кількістю товарів в полі order по зростанню. (sort)-->

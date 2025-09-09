@@ -1,0 +1,16 @@
+"use strict";
+const s1 = 'hello';
+const s2 = 'owu';
+const s3 = 'com';
+const s4 = 'ua';
+const n1 = 1;
+const n2 = 10;
+const n3 = -999;
+const n4 = 123;
+const n5 = 3.14;
+const n6 = 16;
+const b1 = true;
+const b2 = false;
+console.log(s1, s2, s3, s4);
+console.log(n1, n2, n3, n4, n5, n6);
+console.log(b1, b2);

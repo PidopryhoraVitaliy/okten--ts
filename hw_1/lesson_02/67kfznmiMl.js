@@ -1,0 +1,12 @@
+"use strict";
+const array = ['string', 5, true, NaN, false, [true, false], { name: 'John', age: 18 }, null, undefined, '10'];
+console.log(array[0]);
+console.log(array[1]);
+console.log(array[2]);
+console.log(array[3]);
+console.log(array[4]);
+console.log(array[5]);
+console.log(array[6]);
+console.log(array[7]);
+console.log(array[8]);
+console.log(array[9]);

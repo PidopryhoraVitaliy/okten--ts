@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>gEFoxMMO</title>
+</head>
+<body>
+<script>
+    function addUl(array) {
+        let ul = `<ul>`;
+        for (const item of array) {
+            ul += `<li>${item}</li>`;
+        }
+        ul += `</ul>`;
+        document.write(ul);
+    }
+    addUl([1, 2, 3, 4, 5, 'test']);
+    addUl([true, false, undefined, null, NaN, 'test', 10]);
+</script>
+</body>
+</html>
+
+<!--#gEFoxMMO-->
+<!--– створити функцію, яка приймає масив примітивних елементів (числа,стрінги,булеві),-->
+<!--та будує для них список (ul li) та виводить його через document.write-->

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>bovDJDTIjt</title>
+</head>
+<body>
+<script>
+    const addToDocument = array => {
+        for (const item of array) {
+            document.write(`
+                <div>
+                    id:${item.id} name:${item.name} age:${item.age}
+                </div>`);
+        }
+    }
+    addToDocument([
+        {id:1, name:'vasia', age:37},
+        {id:2, name:'petro', age:27},
+        {id:3, name:'lena', age:21}]
+    );
+</script>
+</body>
+</html>
+
+<!--#bovDJDTIjt-->
+<!--– створити функцію, яка приймає масив об’єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об’єкту окремий блок.-->

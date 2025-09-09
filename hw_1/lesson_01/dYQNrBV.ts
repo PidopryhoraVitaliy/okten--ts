@@ -1,0 +1,15 @@
+const s1: string = 'hello';
+const s2: string = 'owu';
+const s3: string = 'com';
+const s4: string = 'ua';
+const n1: number = 1;
+const n2: number = 10;
+const n3: number = -999;
+const n4: number = 123;
+const n5: number = 3.14;
+const n6: number = 16;
+const b1: boolean = true;
+const b2: boolean = false;
+console.log(s1, s2, s3, s4);
+console.log(n1, n2, n3, n4, n5, n6);
+console.log(b1, b2);

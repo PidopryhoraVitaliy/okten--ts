@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AiN5CoUQ</title>
+</head>
+<body>
+<script>
+
+    function copyObject(source) {
+        let newObject = (Array.isArray(source)) ? [] : {};
+        //for (const key of Object.keys(source)) {
+        for (const key in source) {
+            const value = source[key];
+            // console.log(key, typeof value, value);
+            if (!value) continue;   // Додати перевірки на undefined, null, NaN.
+            if (typeof value === 'object') {
+                newObject[key] = copyObject(value);
+            } else {
+                newObject[key] = value;
+            }
+        }
+        return newObject;
+    }
+
+    function cloner(obj) {
+        if (obj) {
+            let functions = [];
+            for (const key in obj) {
+                if (typeof obj[key] === 'function') {
+                    const functionClone = obj[key].bind({});
+                    functions.push({functionClone, key});
+                }
+            }
+            const cloneObj = JSON.parse(JSON.stringify(obj));
+            for (const func of functions) {
+                cloneObj[func.key] = func.functionClone;
+            }
+            // console.log(cloneObj);
+            return cloneObj
+        }
+        throw new Error(`Could not clone ${obj}`);
+    }
+
+    const person = {
+        name: 'Vasia',
+        surname: 'Pupkin',
+        wife: {
+            name: 'Nastia',
+            surname: 'Pupkin',
+        },
+        children: [
+            {name: 'Valeri'},
+            {name: 'Semen'},
+        ],
+        walk: function () {
+            console.log(`${this.name} is going!`);
+        },
+        greet() {
+            console.log(`greet ${this.name}!`);
+        },
+        test: null,
+        age: NaN,
+    };
+
+    console.log('person', person);
+    person.walk();
+
+    console.log('--------------------------', 'recursive copy');
+    const copy = copyObject(person);
+    console.log('copy', copy);
+    copy.walk();
+    copy.name = 'Test';
+    copy.walk();
+    copy.greet();
+
+    console.log('--------------------------', 'hw_resolves - cloner');
+    const clone = cloner(person);
+    console.log('clone', clone);
+    clone.walk();
+    clone.name = 'Test';
+    clone.walk();
+
+</script>
+</body>
+</html>
+
+<!--#AiN5CoUQ-->
+<!--Створити функцію, яка робить глибоку копію об’єкта.-->
+<!--Додати перевірки на undefined, null, NaN.-->
+<!--Подумати і реалізувати логіку, в якій кінцевий об’єкт буде мати функції, які в нього були до цього моменту.-->

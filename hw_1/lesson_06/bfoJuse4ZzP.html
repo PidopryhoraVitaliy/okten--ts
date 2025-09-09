@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bfoJuse4ZzP</title>
+</head>
+<body>
+<script>
+
+    function stringToArray(str) {
+        if (typeof str === 'string' && str) {
+            return str.split(' ');
+        } else {
+            return [''];
+        }
+    }
+
+    let str = 'Ревуть воли як ясла повні';
+    let arr = stringToArray(str);
+
+    console.log(str);
+    console.log(arr);
+
+    console.log(stringToArray(null));
+    console.log(stringToArray(55));
+    console.log(stringToArray({id: 'id'}));
+
+</script>
+</body>
+</html>
+
+<!--#bfoJuse4ZzP-->
+<!--– Напишіть функцію stringToarray(str), яка перетворює рядок на масив слів.-->
+<!--let str = ‘Ревуть воли як ясла повні’;-->
+<!--let arr = stringToarray(str); [‘Ревуть’, ‘воли’, ‘як’, ‘ясла’, ‘повні’]-->
