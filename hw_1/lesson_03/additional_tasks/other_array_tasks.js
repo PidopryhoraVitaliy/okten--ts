@@ -91,43 +91,43 @@
         }
     }
     console.log(numberFromTestArray);
+    console.log('Users with cities:');
+    let usersWithId = [
+        { id: 1, name: 'vasya', age: 31, status: false },
+        { id: 2, name: 'petya', age: 30, status: true },
+        { id: 3, name: 'kolya', age: 29, status: true },
+        { id: 4, name: 'olya', age: 28, status: false }
+    ];
+    let citiesWithId = [
+        { user_id: 3, country: 'USA', city: 'Portland' },
+        { user_id: 1, country: 'Ukraine', city: 'Ternopil' },
+        { user_id: 2, country: 'Poland', city: 'Krakow' },
+        { user_id: 4, country: 'USA', city: 'Miami' }
+    ];
+    let usersWithCities = [];
+    for (const user of usersWithId) {
+        let address = {
+            user_id: 0,
+            country: '',
+            city: ''
+        };
+        for (const city of citiesWithId) {
+            if (city.user_id === user.id) {
+                // address = city;
+                Object.assign(address, city);
+            }
+        }
+        const userWithCity = {
+            id: user.id,
+            name: user.name,
+            age: user.age,
+            status: user.status,
+            address: address
+        };
+        usersWithCities.push(userWithCity);
+    }
+    console.log(usersWithCities);
 }
-//     console.log('Users with cities:');
-//     let usersWithId: UserWithIdType[] = [
-//         {id: 1, name: 'vasya', age: 31, status: false},
-//         {id: 2, name: 'petya', age: 30, status: true},
-//         {id: 3, name: 'kolya', age: 29, status: true},
-//         {id: 4, name: 'olya', age: 28, status: false}
-//     ];
-//     let citiesWithId: CitiesWithIdType[] = [
-//         {user_id: 3, country: 'USA', city: 'Portland'},
-//         {user_id: 1, country: 'Ukraine', city: 'Ternopil'},
-//         {user_id: 2, country: 'Poland', city: 'Krakow'},
-//         {user_id: 4, country: 'USA', city: 'Miami'}
-//     ];
-//     let usersWithCities: UserWithAddress[] = [];
-//     for (const user of usersWithId) {
-//         let address: CitiesWithIdType;
-//         for (const city of citiesWithId) {
-//             if (city.user_id === user.id) {
-//                 address = city;
-//             }
-//         }
-//         const userWithCity: UserWithAddress = {
-//             id: user.id,
-//             name: user.name,
-//             age: user.age,
-//             status: user.status,
-//             address: {
-//                 user_id: address.user_id,
-//                 country: address.country,
-//                 city: address.city,
-//             }
-//         }
-//         usersWithCities.push(userWithCity);
-//     }
-//     console.log(usersWithCities);
-//
 // //============================================================
 //
 //     console.log('– Взяти масив з 10 чисел або створити його. Вивести в консоль тільки ті елементи, значення яких є парними.');
