@@ -52,7 +52,7 @@
     }
 
     console.log('4. Вивести за допомогою console.log кожен третій елемент, тільки якщо цей елемент є парним, та записати їх в новий масив');
-    const evenElements = [];
+    const evenElements: number[] = [];
     for (let i = 2; i < array.length; i += 3) {
         if (array[i] % 2 === 0) {
             console.log(array[i]);
@@ -161,48 +161,48 @@
         usersWithCities.push(userWithCity);
     }
     console.log(usersWithCities);
+
+//============================================================
+
+    console.log('– Взяти масив з 10 чисел або створити його. Вивести в консоль тільки ті елементи, значення яких є парними.');
+    const array10: number [] = [];
+    for (let i = 0; i < 10; i++) {
+        array10.push(getRandomIntInclusive(1, 10));
+    }
+    console.log(array10);
+    for (const item of array10) {
+        if (item % 2 === 0) {
+            console.log(item);
+        }
+    }
+    console.log('– Взяти масив з 10 чисел або створити його. Створити 2-й порожній масив. За допомогою будь-якого циклу скопіювати значення одного масиву в інший.');
+    const copyArray10: number[] = [];
+    for (const item of array10) {
+        copyArray10.push(item);
+    }
+    console.log(copyArray10);
+
+    console.log('– Дано масив: [ ‘a’, ‘b’, ‘c’] . За допомогою циклу for зібрати всі букви в слово.');
+    const abc: string[] = ['a', 'b', 'c'];
+    let word: string = '';
+    for (let i = 0; i < abc.length; i++) {
+        word += abc[i];
+    }
+    console.log(word);
+
+    console.log('– Дано масив: [ ‘a’, ‘b’, ‘c’] . За допомогою циклу while зібрати всі букви в слово.');
+    word = '';
+    let i: number = 0;
+    while (i < abc.length) {
+        word += abc[i];
+        i++
+    }
+    console.log(word);
+
+    console.log('– Дано масив: [ ‘a’, ‘b’, ‘c’] . За допомогою циклу for of зібрати всі букви в слово.');
+    word = '';
+    for (const item of abc) {
+        word += item;
+    }
+    console.log(word);
 }
-// //============================================================
-//
-//     console.log('– Взяти масив з 10 чисел або створити його. Вивести в консоль тільки ті елементи, значення яких є парними.');
-//     const array10 = [];
-//     for (let i = 0; i < 10; i++) {
-//         array10.push(getRandomIntInclusive(1, 10));
-//     }
-//     console.log(array10);
-//     for (const item of array10) {
-//         if (item % 2 === 0) {
-//             console.log(item);
-//         }
-//     }
-//     console.log('– Взяти масив з 10 чисел або створити його. Створити 2-й порожній масив. За допомогою будь-якого циклу скопіювати значення одного масиву в інший.');
-//     const copyArray10 = [];
-//     for (const item of array10) {
-//         copyArray10.push(item);
-//     }
-//     console.log(copyArray10);
-//
-//     console.log('– Дано масив: [ ‘a’, ‘b’, ‘c’] . За допомогою циклу for зібрати всі букви в слово.');
-//     const abc = ['a', 'b', 'c'];
-//     let word = '';
-//     for (let i = 0; i < abc.length; i++) {
-//         word += abc[i];
-//     }
-//     console.log(word);
-//
-//     console.log('– Дано масив: [ ‘a’, ‘b’, ‘c’] . За допомогою циклу while зібрати всі букви в слово.');
-//     word = '';
-//     let i = 0;
-//     while (i < abc.length) {
-//         word += abc[i];
-//         i++
-//     }
-//     console.log(word);
-//
-//     console.log('– Дано масив: [ ‘a’, ‘b’, ‘c’] . За допомогою циклу for of зібрати всі букви в слово.');
-//     word = '';
-//     for (const item of abc) {
-//         word += item;
-//     }
-//     console.log(word);
-// }
