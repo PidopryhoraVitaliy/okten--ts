@@ -13,24 +13,26 @@
     //     return newObject;
     // }
 
-    // function cloner<T>(obj:T):T {
-    //     if (obj) {
-    //         const functions = [];
-    //         for (const key in obj) {
-    //             if (typeof obj[key] === 'function') {
-    //                 const functionClone = obj[key].bind({});
-    //                 functions.push({functionClone, key});
-    //             }
-    //         }
-    //         const cloneObj = JSON.parse(JSON.stringify(obj));
-    //         for (const func of functions) {
-    //             cloneObj[func.key] = func.functionClone;
-    //         }
-    //         // console.log(cloneObj);
-    //         return cloneObj
-    //     }
-    //     throw new Error(`Could not clone ${obj}`);
-    // }
+    type FunctionCloneObject = { functionClone: Function, key: string };
+
+    function cloner<T>(obj: T): T {
+        if (obj) {
+            const functions: Array<FunctionCloneObject> = [];
+            for (const key in obj) {
+                if (typeof obj[key] === 'function') {
+                    const functionClone = (obj[key] as Function).bind({});
+                    functions.push({functionClone, key});
+                }
+            }
+            const cloneObj: T = JSON.parse(JSON.stringify(obj));
+            for (const func of functions) {
+                (cloneObj as any)[func.key] = func.functionClone;
+            }
+            // console.log(cloneObj);
+            return cloneObj
+        }
+        throw new Error(`Could not clone ${obj}`);
+    }
 
     const person = {
         name: 'Vasia',
@@ -64,10 +66,10 @@
     // copy.walk();
     // copy.greet();
 
-    // console.log('--------------------------', 'hw_resolves - cloner');
-    // const clone = cloner(person);
-    // console.log('clone', clone);
-    // clone.walk();
-    // clone.name = 'Test';
-    // clone.walk();
+    console.log('--------------------------', 'hw_resolves - cloner');
+    const clone = cloner(person);
+    console.log('clone', clone);
+    clone.walk();
+    clone.name = 'Test';
+    clone.walk();
 }

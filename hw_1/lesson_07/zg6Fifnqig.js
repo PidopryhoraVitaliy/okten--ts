@@ -1,0 +1,45 @@
+"use strict";
+{
+    // створити клас/функцію конструктор попелюшка з полями ім’я, вік, розмір ноги. Створити масив з 10 попелюшок.
+    class Cinderella {
+        constructor(name, age, footSize) {
+            this.name = name;
+            this.age = age;
+            this.footSize = footSize;
+            this.name = name;
+            this.age = age;
+            this.footSize = footSize;
+        }
+    }
+    // Створити об’єкт класу “принц” за допомоги класу який має поля ім’я, вік, туфелька яку він знайшов.
+    class Prince {
+        constructor(name, age, foundFootSize) {
+            this.name = name;
+            this.age = age;
+            this.foundFootSize = foundFootSize;
+            this.name = name;
+            this.age = age;
+            this.foundFootSize = foundFootSize;
+        }
+    }
+    const cinderellas = [
+        new Cinderella('name1', 16, 35),
+        new Cinderella('name2', 16, 36),
+        new Cinderella('name3', 17, 35),
+        new Cinderella('name4', 16, 34),
+        new Cinderella('name5', 18, 35),
+        new Cinderella('name6', 20, 37),
+        new Cinderella('name7', 15, 33),
+        new Cinderella('name8', 17, 35),
+        new Cinderella('name9', 19, 36),
+        new Cinderella('name10', 19, 35),
+    ];
+    const prince = new Prince('Prince', 20, 36);
+    for (const cinderella of cinderellas) {
+        if (cinderella.footSize === prince.foundFootSize) {
+            console.log(cinderella);
+        }
+    }
+    const firstCinderella = cinderellas.find(cinderella => cinderella.footSize === prince.foundFootSize);
+    console.log('firstCinderella:', firstCinderella);
+}
