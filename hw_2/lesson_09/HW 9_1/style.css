@@ -1,0 +1,17 @@
+div {
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid black;
+}
+.duration-wrap {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    border: none;
+}
+.duration-wrap div {
+    width: 100px;
+}
+.course-wrap {
+    border: none;
+}

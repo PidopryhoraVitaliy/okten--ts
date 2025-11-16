@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+}
+.recipes-wrap {
+
+}
+.recipe {
+    padding: 20px;
+    border: 1px solid black;
+}
+img {
+    max-width: 200px;
+}
