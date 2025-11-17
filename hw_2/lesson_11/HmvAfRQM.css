@@ -1,0 +1,10 @@
+.cart {
+    padding: 10px;
+    border: 1px solid black;
+}
+.products {
+    padding-left: 50px;
+}
+img {
+    max-width: 100px;
+}

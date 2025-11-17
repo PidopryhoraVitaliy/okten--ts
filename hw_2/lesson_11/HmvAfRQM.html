@@ -5,72 +5,75 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HmvAfRQM</title>
-    <style>
-        .cart {
-            padding: 10px;
-            border: 1px solid black;
-        }
-        .products {
-            padding-left: 50px;
-        }
-        img {
-            max-width: 100px;
-        }
-    </style>
+    <link rel="stylesheet" href="HmvAfRQM.css">
+    <!--    <style>-->
+    <!--        .cart {-->
+    <!--            padding: 10px;-->
+    <!--            border: 1px solid black;-->
+    <!--        }-->
+    <!--        .products {-->
+    <!--            padding-left: 50px;-->
+    <!--        }-->
+    <!--        img {-->
+    <!--            max-width: 100px;-->
+    <!--        }-->
+    <!--    </style>-->
 </head>
 <body>
 
 <div class="carts"></div>
 
-<script>
-    const cartsWrap = document.querySelector('.carts');
+<script src="HmvAfRQM.js"></script>
 
-    fetch('https://dummyjson.com/carts')
-        .then(res => res.json())
-        .then(({carts}) => {
-            cartsWrap.innerHTML = '';
-            console.log(carts);
-            for (const cart of carts) {
-                const cartDiv = document.createElement('div');
-                cartDiv.classList.add('cart');
-                for (const key in cart) {
-                    if (key === 'products') {
-                        continue;
-                    }
-                    const propDiv = document.createElement('div');
-                    propDiv.innerText = `${key}: ${cart[key]}`;
-                    cartDiv.appendChild(propDiv);
-                }
-                addProducts(cartDiv, cart.products);
-                cartsWrap.appendChild(cartDiv);
-            }
-        });
+<!--<script>-->
+<!--    const cartsWrap = document.querySelector('.carts');-->
 
-    function addProducts(cartDiv, products) {
-        if (!products || !products.length) return;
-        const productsDiv = document.createElement('div');
-        productsDiv.classList.add('products');
-        productsDiv.innerText = 'Products:';
-        for (const product of products) {
-            const prodDiv = document.createElement('div');
-            for (const productKey in product) {
-                if (productKey === 'thumbnail') {
-                    const thumbnail = document.createElement('img');
-                    thumbnail.src = product[productKey];
-                    prodDiv.appendChild(thumbnail);
-                } else {
-                    const productPropDiv = document.createElement('div');
-                    productPropDiv.innerText = `${productKey}: ${product[productKey]}`;
-                    prodDiv.appendChild(productPropDiv);
-                }
+<!--    fetch('https://dummyjson.com/carts')-->
+<!--        .then(res => res.json())-->
+<!--        .then(({carts}) => {-->
+<!--            cartsWrap.innerHTML = '';-->
+<!--            console.log(carts);-->
+<!--            for (const cart of carts) {-->
+<!--                const cartDiv = document.createElement('div');-->
+<!--                cartDiv.classList.add('cart');-->
+<!--                for (const key in cart) {-->
+<!--                    if (key === 'products') {-->
+<!--                        continue;-->
+<!--                    }-->
+<!--                    const propDiv = document.createElement('div');-->
+<!--                    propDiv.innerText = `${key}: ${cart[key]}`;-->
+<!--                    cartDiv.appendChild(propDiv);-->
+<!--                }-->
+<!--                addProducts(cartDiv, cart.products);-->
+<!--                cartsWrap.appendChild(cartDiv);-->
+<!--            }-->
+<!--        });-->
 
-            }
-            productsDiv.appendChild(prodDiv);
-        }
-        cartDiv.appendChild(productsDiv);
-    }
+<!--    function addProducts(cartDiv, products) {-->
+<!--        if (!products || !products.length) return;-->
+<!--        const productsDiv = document.createElement('div');-->
+<!--        productsDiv.classList.add('products');-->
+<!--        productsDiv.innerText = 'Products:';-->
+<!--        for (const product of products) {-->
+<!--            const prodDiv = document.createElement('div');-->
+<!--            for (const productKey in product) {-->
+<!--                if (productKey === 'thumbnail') {-->
+<!--                    const thumbnail = document.createElement('img');-->
+<!--                    thumbnail.src = product[productKey];-->
+<!--                    prodDiv.appendChild(thumbnail);-->
+<!--                } else {-->
+<!--                    const productPropDiv = document.createElement('div');-->
+<!--                    productPropDiv.innerText = `${productKey}: ${product[productKey]}`;-->
+<!--                    prodDiv.appendChild(productPropDiv);-->
+<!--                }-->
 
-</script>
+<!--            }-->
+<!--            productsDiv.appendChild(prodDiv);-->
+<!--        }-->
+<!--        cartDiv.appendChild(productsDiv);-->
+<!--    }-->
+
+<!--</script>-->
 </body>
 </html>
 
