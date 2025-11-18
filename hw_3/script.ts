@@ -9,17 +9,21 @@
         id: number;
         total: number;
     }
+    type CartsResponse = {
+        carts: CartType[];
+        total: number;
+        skip: number;
+        limit: number;
+    };
 
-    // function foobar<T>(url: string): T {
-    //     fetch(url)
-    //         .then(response => response.json() as Promise<T>)
-    //         .then((data: T): T => data as T);
-    //     // .catch();
-    //     // return {} as T;
-    // }
+    async function foobar<T>(url: string): Promise<T> {
+        const result: Response = await fetch(url);
+        return await result.json() as T;
+    }
 
-    // const cart: CartType = foobar<CartType>('https://dummyjson.com/carts');
-
-    // console.log(cart);
-
+    async function getCartData() {
+        const cartsResponse: CartsResponse = await foobar<CartsResponse>('https://dummyjson.com/carts');
+        console.log(cartsResponse);
+    }
+    getCartData();
 }

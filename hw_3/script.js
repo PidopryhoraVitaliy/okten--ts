@@ -5,13 +5,13 @@
 // SomeType – ваш тип відповіді
 // url – ваш ендпоінт, з якого чекаємо відповідь
 {
-    function foobar(url) {
-        fetch(url)
-            .then(response => response.json())
-            .then((data) => data);
-        // .catch();
-        return {};
+    async function foobar(url) {
+        const result = await fetch(url);
+        return await result.json();
     }
-    const cart = foobar('https://dummyjson.com/carts');
-    console.log(cart);
+    async function getCartData() {
+        const cartsResponse = await foobar('https://dummyjson.com/carts');
+        console.log(cartsResponse);
+    }
+    getCartData();
 }
